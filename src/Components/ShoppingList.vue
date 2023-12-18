@@ -9,7 +9,8 @@ fetch('http://localhost:3000/lists/', {
   headers: { 'Content-type': 'application/json' }
 })
   .then((res) => res.json())
-  .then((item) => (lists.value = item));
+  .then((item) => (lists.value = item))
+  .then(item => console.log(item))
 </script>
 <template>
   <div v-for="list in lists" :key="list.id">
