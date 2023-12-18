@@ -16,7 +16,9 @@ fetch('http://localhost:3000/lists/', {
     <h2>{{ list.title }}</h2>
     <ul>
       <li v-for="item in list.items" :key="item.id" :item="item">
-        {{ list.items.item-name }}
+        {{ item.id }}
+        {{ item-name }}
+        {{ console.log(item) }}
       </li>
     </ul>
   </div>
