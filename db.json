@@ -6,7 +6,7 @@
       "items": [
         {
           "id": 1,
-          "item-name": "toilet paper",
+          "name": "toilet paper",
           "purchased": false
         }
       ],
