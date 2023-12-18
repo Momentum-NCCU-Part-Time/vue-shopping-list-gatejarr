@@ -8,6 +8,11 @@
           "id": 1,
           "name": "toilet paper",
           "purchased": false
+        },
+        {
+          "id": 2,
+          "name": "onions",
+          "purchased": false
         }
       ],
       "updatedAt": "2018-01-01T00:00:00.000Z"
