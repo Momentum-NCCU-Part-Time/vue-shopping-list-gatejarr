@@ -6,12 +6,12 @@
       "items": [
         {
           "id": 1,
-          "name": "toilet paper",
+          "itemName": "toilet paper",
           "purchased": false
         },
         {
           "id": 2,
-          "name": "onions",
+          "itemName": "onions",
           "purchased": false
         }
       ],

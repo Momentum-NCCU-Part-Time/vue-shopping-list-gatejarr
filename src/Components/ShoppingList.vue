@@ -1,7 +1,9 @@
 <script setup>
 import { ref } from 'vue'
+import AddItem from './AddItem.vue'
 
 const lists = ref([])
+const purchased = ref(false)
 
 fetch('http://localhost:3000/lists/', {
   method: 'GET',
@@ -14,9 +16,10 @@ fetch('http://localhost:3000/lists/', {
 <template>
   <div v-for="list in lists" :key="list.id">
     <h2>{{ list.title }}</h2>
+    <AddItem />
     <ul>
       <li v-for="item in list.items" :key="item.id">
-        {{ item.name }}
+        {{ item.itemName }}
         {{ console.log(item) }}
       </li>
     </ul>
