@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 
 const lists = ref([])
-const props = defineProps({ item: Object })
 
 fetch('http://localhost:3000/lists/', {
   method: 'GET',
