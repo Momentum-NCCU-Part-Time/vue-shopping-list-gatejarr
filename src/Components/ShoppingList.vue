@@ -2,19 +2,20 @@
 import { ref } from 'vue'
 
 const lists = ref([])
+const props = defineProps({ item: Object })
 
 fetch('http://localhost:3000/lists/', {
   method: 'GET',
-  headers: { 'Content-type': 'application/jason' }
+  headers: { 'Content-type': 'application/json' }
 })
   .then((res) => res.json())
-  .then((data) => (lists.value = data))
+  .then((item) => (lists.value = item));
 </script>
 <template>
   <div v-for="list in lists" :key="list.id">
     <h2>{{ list.title }}</h2>
     <ul>
-      <li v-for="item in lists" key="item.id">
+      <li v-for="item in list.items" :key="item.id" :item="item">
         {{ list.items.item-name }}
       </li>
     </ul>
