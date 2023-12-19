@@ -11,7 +11,7 @@ const createNewList = () => {
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
       title: newListTitle.value,
-      items: newListItems.value,
+      items: [newListItems.value],
       updatedAt: new Date()
     })
   })
