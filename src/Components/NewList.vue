@@ -1,24 +1,38 @@
 <script setup>
 import { ref } from 'vue'
 
+const newList = ref('')
 const newListTitle = ref('')
 const newListItems = ref([])
 
-const newList = {
-  title: this.newListTitle,
-  items: this.newList.items.map((item) => ({
-    itemName: item.name,
-    purchased: false
-  }))
-}
-fetch('http://localhost:3000/lists/', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(newList)
-})
-  .then((res) => res.json())
-  .then((data) => {
-    this.emit('listAdded', data)
+const createNewList = () => {
+  fetch('http://localhost:3000/lists/', {
+    method: 'POST',
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify({ title: newListTitle.value, items: newListItems.value })
   })
+    .then((res) => res.json())
+    .then((lists) => lists)
+}
 </script>
-<template></template>
+<template>
+  <div id="newListForm">
+    <form @submit.prevent="createNewList">
+      <input
+        v-model.trim="newListTitle"
+        type="text"
+        id="newListTitle"
+        placeholder="Store Name"
+        required
+      />
+      <input
+        v-model.trim="newListItems"
+        type="text"
+        id="newListItems"
+        placeholder="Items"
+        required
+      />
+      <button type="submit" id="saveNewList">Save</button>
+    </form>
+  </div>
+</template>

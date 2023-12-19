@@ -7,10 +7,10 @@ import NewList from './Components/NewList.vue'
 <template>
   <div id="header">
     <h1>Vue Shopping List</h1>
-    <button @click.prevent="showNewList = true">New List</button>
-    <NewList v-if="showNewList" />
+    <!-- <button @click.prevent="showNewList = true">New List</button> -->
     <!-- your code here -->
   </div>
+  <NewList />
   <div>
     <ShoppingList />
   </div>
