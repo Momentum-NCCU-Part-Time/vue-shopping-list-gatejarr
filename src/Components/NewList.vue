@@ -9,7 +9,11 @@ const createNewList = () => {
   fetch('http://localhost:3000/lists/', {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
-    body: JSON.stringify({ title: newListTitle.value, items: newListItems.value })
+    body: JSON.stringify({
+      title: newListTitle.value,
+      items: newListItems.value,
+      updatedAt: new Date()
+    })
   })
     .then((res) => res.json())
     .then((lists) => lists)

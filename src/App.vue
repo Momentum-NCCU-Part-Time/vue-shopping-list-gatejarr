@@ -8,9 +8,9 @@ import NewList from './Components/NewList.vue'
   <div id="header">
     <h1>Vue Shopping List</h1>
     <!-- <button @click.prevent="showNewList = true">New List</button> -->
-    <!-- your code here -->
+    <NewList />
   </div>
-  <NewList />
+
   <div>
     <ShoppingList />
   </div>
