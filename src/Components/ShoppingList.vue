@@ -20,6 +20,8 @@ fetch('http://localhost:3000/lists/', {
     <ul>
       <li v-for="item in list.items" :key="item.id">
         {{ item.itemName }}
+        <input v-model="purchased" type="checkbox" />
+        <!-- Not working, selects all checkboxes -->
         {{ console.log(item) }}
       </li>
     </ul>

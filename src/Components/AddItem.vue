@@ -5,7 +5,7 @@ const emit = defineEmits(['itemAdded'])
 
 const addItem = (newItem) => {
   fetch('http://localhost:3000/lists/' + newItem.value, {
-    method: 'PUT',
+    method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ itemName: newItem.value, purchased: false })
   }).then((res) => res.json())
