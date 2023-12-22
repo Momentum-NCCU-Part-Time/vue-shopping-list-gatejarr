@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import ShoppingList from './Components/ShoppingList.vue'
+import AllLists from './Components/AllLists.vue'
 import NewList from './Components/NewList.vue'
 </script>
 
@@ -12,7 +12,7 @@ import NewList from './Components/NewList.vue'
   </div>
 
   <div>
-    <ShoppingList />
+    <AllLists />
   </div>
 </template>
 
