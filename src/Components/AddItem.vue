@@ -1,14 +1,24 @@
 <script setup>
 import { ref } from 'vue'
 const newItem = ref('')
-const emit = defineEmits(['itemAdded'])
+const props = defineProps({itemProp: Object, list: Object})
+// const existingItems = ref(props.list[items])
 
-const addItem = (newItem) => {
-  fetch('http://localhost:3000/lists/' + newItem.value, {
+const addItem = () => {
+  fetch('http://localhost:3000/lists/' + props.list.id, {
     method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ itemName: newItem.value, purchased: false })
-  }).then((res) => res.json())
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      title: props.list.title,
+      items: props.list.items.push({
+        id: props.itemProp.id,
+        itemName: newItem.value,
+        purchased: 'false'
+      }),
+      updatedAt: new Date ()
+    })
+  })
+  .then((res) => res.json())
 }
 </script>
 

@@ -3,7 +3,6 @@ import { ref } from 'vue'
 
 const newList = ref('')
 const newListTitle = ref('')
-const newListItems = ref([])
 
 const createNewList = () => {
   fetch('http://localhost:3000/lists/', {
@@ -11,14 +10,21 @@ const createNewList = () => {
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
       title: newListTitle.value,
-      items: [newListItems.value],
+      // items: [newListItems.value],
       updatedAt: new Date()
     })
   })
     .then((res) => res.json())
-    .then((lists) => lists)
+    .then((list) => {
+      resetLists()
+    })
+}
+
+const resetLists = () => {
+  newList.value = ''
 }
 </script>
+
 <template>
   <div id="newListForm">
     <form @submit.prevent="createNewList">
@@ -29,14 +35,14 @@ const createNewList = () => {
         placeholder="Store Name"
         required
       />
-      <input
+      <!-- <input
         v-model.trim="newListItems"
         type="text"
         id="newListItems"
         placeholder="Items"
         required
-      />
-      <button type="submit" id="saveNewList">Save</button>
+      /> -->
+      <button type="submit" id="saveNewList">New List</button>
     </form>
   </div>
 </template>
