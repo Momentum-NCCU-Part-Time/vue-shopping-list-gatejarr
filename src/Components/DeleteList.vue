@@ -16,5 +16,5 @@ const deleteList = (list) => {
 </script>
 
 <template>
-  <button @click="deleteList">Delete List</button>
+  <button @click="deleteList">Delete NO CONIRM</button>
 </template>
