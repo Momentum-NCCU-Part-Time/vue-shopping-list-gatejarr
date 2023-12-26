@@ -5,12 +5,11 @@ const props = defineProps({ list: Object })
 </script>
 
 <template>
-    <!-- <h3>{{ props.list.title }}</h3> -->
-<ul>
+  <ul>
     <li v-for="items in props.list.items" :key="list.items.id">
-    {{ items.itemName }}
-    <!-- <input v-model="purchased" type="checkbox" /> -->
-    <!-- CHECKBOX / PURCHASED WIP-->
+      {{ items.itemName }}
+      <input v-model="purchased" type="checkbox" />
+      <!-- CHECKBOX / PURCHASED WIP-->
     </li>
-</ul>
+  </ul>
 </template>

@@ -16,6 +16,38 @@
         }
       ],
       "updatedAt": "2018-01-01T00:00:00.000Z"
+    },
+    {
+      "title": "Costco",
+      "items": [
+        {
+          "id": 1,
+          "itemName": "Milk",
+          "purchased": "false"
+        },
+        {
+          "id": 2,
+          "itemName": "Bread",
+          "purchased": "false"
+        },
+        {
+          "id": 3,
+          "itemName": "Steak",
+          "purchased": "false"
+        },
+        {
+          "id": 4,
+          "itemName": "Jerk",
+          "purchased": "false"
+        },
+        {
+          "id": 5,
+          "itemName": "Television",
+          "purchased": "false"
+        }
+      ],
+      "updatedAt": "2023-12-26T19:37:53.791Z",
+      "id": 2
     }
   ]
 }

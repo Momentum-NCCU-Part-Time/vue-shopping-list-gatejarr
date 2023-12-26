@@ -2,20 +2,21 @@
 import { ref } from 'vue'
 
 const newList = ref('')
-const newListTitle = ref('')
+const emit = defineEmits(['newListCreated'])
 
 const createNewList = () => {
   fetch('http://localhost:3000/lists/', {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
-      title: newListTitle.value,
-      // items: [newListItems.value],
+      title: newList.value,
+      items: [],
       updatedAt: new Date()
     })
   })
     .then((res) => res.json())
-    .then((list) => {
+    .then((newList) => {
+      emit('newListCreated', newList)
       resetLists()
     })
 }
@@ -28,20 +29,7 @@ const resetLists = () => {
 <template>
   <div id="newListForm">
     <form @submit.prevent="createNewList">
-      <input
-        v-model.trim="newListTitle"
-        type="text"
-        id="newListTitle"
-        placeholder="Store Name"
-        required
-      />
-      <!-- <input
-        v-model.trim="newListItems"
-        type="text"
-        id="newListItems"
-        placeholder="Items"
-        required
-      /> -->
+      <input v-model="newList" type="text" placeholder="Store Name" required />
       <button type="submit" id="saveNewList">New List</button>
     </form>
   </div>
