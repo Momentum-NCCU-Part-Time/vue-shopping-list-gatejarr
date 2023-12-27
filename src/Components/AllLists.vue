@@ -39,7 +39,7 @@ const getLists = () => {
       <p>Updated At: {{ dayjs(list.updatedAt).format('MMMM D, YYYY h:mm A') }}</p>
       <!-- <button @click="showDeleteModal = true">DeleteModal</button>
       <DeleteModal :list="list" v-if="showDeleteModal" /> -->
-      <DeleteList :list="list" @list-deleted="getLists" />
+      <DeleteList :deleteList="list" @list-deleted="getLists" />
       <AddItem :list="list" @item-added="getLists" />
     </div>
     <div>

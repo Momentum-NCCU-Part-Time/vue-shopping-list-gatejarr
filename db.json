@@ -29,24 +29,9 @@
           "id": 1,
           "itemName": "Television",
           "purchased": "false"
-        },
-        {
-          "id": 2,
-          "itemName": "Computer",
-          "purchased": "false"
-        },
-        {
-          "id": 3,
-          "itemName": "Patio Furniture",
-          "purchased": "false"
-        },
-        {
-          "id": 4,
-          "itemName": "Gasoline",
-          "purchased": "false"
         }
       ],
-      "updatedAt": "2023-12-26T23:51:31.137Z",
+      "updatedAt": "2023-12-27T21:59:58.950Z",
       "id": 2
     }
   ]
