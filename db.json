@@ -21,18 +21,6 @@
         }
       ],
       "updatedAt": "2023-12-26T23:34:40.086Z"
-    },
-    {
-      "title": "CostCo",
-      "items": [
-        {
-          "id": 1,
-          "itemName": "Television",
-          "purchased": "false"
-        }
-      ],
-      "updatedAt": "2023-12-27T21:59:58.950Z",
-      "id": 2
     }
   ]
 }

@@ -1,28 +1,12 @@
-<script>
+<script setup>
 import { ref } from 'vue'
-import ConfirmDialogue from './ConfirmDialogue.vue'
 
-export default {
-  components: { ConfirmDialogue },
-  methods: {
-    async confirmDelete() {
-      const ok = await this.$refs.confirmDialogue.show({
-        title: 'Delete List',
-        message: 'Are you sure you want to delete this list?',
-        okButton: 'Delete Forever'
-      })
-      if (ok) {
-        alert('You have successfully deleted this list.')
-      }
-    }
-  }.then deleteList()
-}
-
-const props = defineProps({ list: Object })
+const props = defineProps({ deleteList: Object })
 const emit = defineEmits(['listDeleted'])
+const listDelete = ref(false)
 
 const deleteList = (list) => {
-  fetch('http://localhost:3000/lists/' + props.list.id, {
+  fetch('http://localhost:3000/lists/' + props.deleteList.id, {
     method: 'DELETE'
   })
     .then((res) => res.json())
@@ -30,12 +14,58 @@ const deleteList = (list) => {
       emit('listDeleted', listDeleted)
     })
 }
+
+const getLists = () => {
+  fetch('http://localhost:3000/lists/', {
+    method: 'GET',
+    headers: { 'Content-type': 'application/json' }
+  })
+    .then((res) => res.json())
+    .then((data) => (lists.value = data))
+}
 </script>
 
 <template>
-  <div>
-    <h1>Delete List</h1>
-    <button class="delete-btn" @click="confirmDelete">DeleteModal</button>
-    <confirm-dialog ref="confirmDialogue"></confirm-dialog>
+  <div class="delete-modal">
+    <div class="window">
+      <h3>Are you sure you want to delete {{ props.deleteList.title }}?</h3>
+      <button @click="deleteList">Delete</button>
+      <button>Cancel</button>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.popup-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.window {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+</style>
