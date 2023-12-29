@@ -28,6 +28,7 @@ const getLists = () => {
   <DeleteModal
     :deleteList="list"
     v-if="showDeleteModal"
-    @list-deleted="(showDeleteModal = false), getLists"
+    @list-deleted="showDeleteModal = false"
+    @delete-cancelled="showDeleteModal = false"
   />
 </template>

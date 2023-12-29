@@ -2,8 +2,9 @@
 import { ref } from 'vue'
 
 const props = defineProps({ deleteList: Object })
-const emit = defineEmits(['listDeleted'])
+const emit = defineEmits(['listDeleted', 'deleteCancelled'])
 const listDelete = ref(false)
+const lists = ref([])
 
 const deleteList = (list) => {
   fetch('http://localhost:3000/lists/' + props.deleteList.id, {
@@ -12,16 +13,12 @@ const deleteList = (list) => {
     .then((res) => res.json())
     .then((listDeleted) => {
       emit('listDeleted', listDeleted)
+      updateLists()
     })
 }
 
-const getLists = () => {
-  fetch('http://localhost:3000/lists/', {
-    method: 'GET',
-    headers: { 'Content-type': 'application/json' }
-  })
-    .then((res) => res.json())
-    .then((data) => (lists.value = data))
+const cancelDelete = () => {
+  emit('deleteCancelled', cancelDelete)
 }
 </script>
 
@@ -30,7 +27,7 @@ const getLists = () => {
     <div class="window">
       <h3>Are you sure you want to delete {{ props.deleteList.title }}?</h3>
       <button @click="deleteList">Delete</button>
-      <button>Cancel</button>
+      <button @click="cancelDelete">Cancel</button>
     </div>
   </div>
 </template>
