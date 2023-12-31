@@ -4,20 +4,11 @@ import DeleteModal from './DeleteModal.vue'
 
 const props = defineProps({ list: Object })
 const lists = ref([])
+const emit = defineEmits(['listReset'])
 const showDeleteModal = ref(false)
 
-const getLists = () => {
-  fetch('http://localhost:3000/lists/', {
-    method: 'GET',
-    headers: { 'Content-type': 'application/json' }
-  })
-    .then((res) => res.json())
-    .then((data) => (lists.value = data))
-    resetLists()
-}
-
  const resetLists = () => {
-   lists.value = []
+   emit('listReset', resetLists)
  }
 </script>
 
@@ -34,7 +25,7 @@ const getLists = () => {
     :deleteList="list"
     v-if="showDeleteModal"
     @list-deleted="showDeleteModal = false"
-    @deleteConfirmed = 'getLists'
+    @deleteConfirmed = 'resetLists'
     @delete-cancelled="showDeleteModal = false"
   />
 </template>

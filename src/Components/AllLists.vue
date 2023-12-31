@@ -36,7 +36,16 @@ const getLists = () => {
       <AddItem :list="list" @item-added="getLists" />
     </div>
     <div>
-      <ListItems :list="list" />
+      <ListItems :list="list" @list-reset="getLists" />
     </div>
   </div>
 </template>
+
+<style scoped>
+
+h2 {
+  background-color: gray;
+  color: whitesmoke;
+}
+
+</style>

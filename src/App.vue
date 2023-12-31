@@ -8,7 +8,7 @@ import AllLists from './Components/AllLists.vue'
     <h1>Vue Shopping List</h1>
   </div>
 
-  <div>
+  <div class="mainPage">
     <AllLists />
   </div>
 </template>
