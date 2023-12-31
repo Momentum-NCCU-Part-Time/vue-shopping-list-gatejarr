@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 const props = defineProps({ deleteList: Object })
-const emit = defineEmits(['listDeleted', 'deleteCancelled'])
+const emit = defineEmits(['listDeleted', 'deleteCancelled', 'deleteConfirmed'])
 const listDelete = ref(false)
 const lists = ref([])
 
@@ -13,8 +13,12 @@ const deleteList = (list) => {
     .then((res) => res.json())
     .then((listDeleted) => {
       emit('listDeleted', listDeleted)
-      updateLists()
+      deleteConfirmed()
     })
+}
+
+const deleteConfirmed = () => {
+  emit('deleteConfirmed', deleteConfirmed)
 }
 
 const cancelDelete = () => {

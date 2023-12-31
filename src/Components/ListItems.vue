@@ -13,7 +13,12 @@ const getLists = () => {
   })
     .then((res) => res.json())
     .then((data) => (lists.value = data))
+    resetLists()
 }
+
+ const resetLists = () => {
+   lists.value = []
+ }
 </script>
 
 <template>
@@ -29,6 +34,7 @@ const getLists = () => {
     :deleteList="list"
     v-if="showDeleteModal"
     @list-deleted="showDeleteModal = false"
+    @deleteConfirmed = 'getLists'
     @delete-cancelled="showDeleteModal = false"
   />
 </template>
