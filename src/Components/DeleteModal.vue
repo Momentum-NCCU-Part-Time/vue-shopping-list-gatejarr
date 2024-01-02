@@ -68,5 +68,6 @@ const cancelDelete = () => {
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
+  color: black;
 }
 </style>

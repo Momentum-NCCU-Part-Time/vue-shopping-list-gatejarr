@@ -29,7 +29,8 @@ const getLists = () => {
   <div>
     <NewList @new-list-created="getLists" />
   </div>
-  <div v-for="list in lists" :key="list.id" :class= "listContainer">
+  <br />
+  <div v-for="list in lists" :key="list.id" class="listContainer">
     <div>
       <h2>{{ list.title }}</h2>
       <p>Updated At: {{ dayjs(list.updatedAt).format('MMMM D, YYYY h:mm A') }}</p>
@@ -46,14 +47,16 @@ const getLists = () => {
 h2 {
   background-color: gray;
   color: whitesmoke;
+  width: 250px;
+  height: auto;
 }
 
 .listContainer {
   display: flex;
-  max-width: 250px;
-  height: auto;
-  border-color: black;
-  background-color: black;
+  border: 1px solid black;
+  min-width: 10px;
+  background-color: darkgray;
+  color: whitesmoke;
 
 }
 
