@@ -16,7 +16,7 @@ const addItem = (list) => {
         {
           id: props.list.items.length + 1,
           itemName: newItem.value,
-          purchased: 'false'
+          purchased: false
         }
       ],
       updatedAt: new Date()
