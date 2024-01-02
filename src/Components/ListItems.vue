@@ -54,4 +54,8 @@ const itemPurchased = (list) => {
 .strikeThrough {
   text-decoration: line-through;
 }
+
+ul {
+  font-family: 'Courier New', Courier, monospace;
+}
 </style>

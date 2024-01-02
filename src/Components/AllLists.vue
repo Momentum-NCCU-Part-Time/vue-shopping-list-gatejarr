@@ -49,6 +49,7 @@ h3 {
   color: whitesmoke;
   width: 250px;
   height: auto;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .listContainer {
@@ -57,5 +58,6 @@ h3 {
   min-width: 10px;
   background-color: darkgray;
   color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
 }
 </style>

@@ -13,4 +13,8 @@ import AllLists from './Components/AllLists.vue'
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#header {
+  font-family: 'Courier New', Courier, monospace;
+}
+</style>
