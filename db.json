@@ -38,9 +38,20 @@
           "id": 7,
           "itemName": "Coffee",
           "purchased": false
+        },
+        {
+          "id": 8,
+          "itemName": "Salsa",
+          "purchased": false
         }
       ],
-      "updatedAt": "2024-01-02T22:00:27.530Z"
+      "updatedAt": "2024-01-02T22:26:10.588Z"
+    },
+    {
+      "title": "CostCo",
+      "items": [],
+      "updatedAt": "2024-01-02T22:29:35.371Z",
+      "id": 2
     }
   ]
 }

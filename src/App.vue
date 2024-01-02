@@ -5,7 +5,7 @@ import AllLists from './Components/AllLists.vue'
 
 <template>
   <div id="header">
-    <h1>Vue Shopping List</h1>
+    <h1>GateJarr's Vue Shopping List</h1>
   </div>
 
   <div class="mainPage">
