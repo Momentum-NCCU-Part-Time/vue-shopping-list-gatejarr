@@ -4,7 +4,7 @@ import { ref } from 'vue'
 const props = defineProps({ deleteList: Object })
 const emit = defineEmits(['listDeleted', 'deleteCancelled', 'deleteConfirmed'])
 
-const deleteList = (list) => {
+const deleteList = () => {
   fetch('http://localhost:3000/lists/' + props.deleteList.id, {
     method: 'DELETE'
   })

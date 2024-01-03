@@ -50,11 +50,13 @@ h3 {
   width: 250px;
   height: auto;
   font-family: 'Courier New', Courier, monospace;
+  border-radius: 5px;
 }
 
 .listContainer {
   display: flex;
   border: 1px solid black;
+  border-radius: 10px;
   min-width: 10px;
   background-color: darkgray;
   color: whitesmoke;

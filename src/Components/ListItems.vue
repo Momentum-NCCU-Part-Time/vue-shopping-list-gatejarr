@@ -15,7 +15,7 @@ const purchased = (items) => {
   itemPurchased(props.list)
 }
 
-const itemPurchased = (list) => {
+const itemPurchased = () => {
   fetch('http://localhost:3000/lists/' + props.list.id, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },

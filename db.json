@@ -36,16 +36,11 @@
         },
         {
           "id": 7,
-          "itemName": "Coffee",
-          "purchased": false
-        },
-        {
-          "id": 8,
-          "itemName": "Salsa",
+          "itemName": "Carrots",
           "purchased": false
         }
       ],
-      "updatedAt": "2024-01-02T23:53:24.859Z"
+      "updatedAt": "2024-01-03T01:19:38.360Z"
     }
   ]
 }
