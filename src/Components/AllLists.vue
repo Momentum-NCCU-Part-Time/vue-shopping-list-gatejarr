@@ -7,7 +7,7 @@ import NewList from './NewList.vue'
 
 const lists = ref([])
 
-fetch('http://localhost:3000/lists/', {
+fetch('http://localhost:3000/shoppinglists/', {
   method: 'GET',
   headers: { 'Content-type': 'application/json' }
 })
@@ -15,7 +15,7 @@ fetch('http://localhost:3000/lists/', {
   .then((data) => (lists.value = data))
 
 const getLists = () => {
-  fetch('http://localhost:3000/lists/', {
+  fetch('http://localhost:3000/shoppinglists/', {
     method: 'GET',
     headers: { 'Content-type': 'application/json' }
   })
