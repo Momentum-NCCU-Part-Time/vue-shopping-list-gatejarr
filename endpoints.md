@@ -10,7 +10,7 @@ app.get("/api/lists/:id", (req, res) => {})
 //Specific List Item
 app.get("/api/lists/:id/:item", (req, res) => {})
 
-//POST
+//POST New List
 app.post("/api/lists", (req, res) => {})
 
 //DELETE
