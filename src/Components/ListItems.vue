@@ -36,7 +36,7 @@ const itemPurchased = () => {
       @click="purchased(items)"
       :class="{ strikeThrough: items.purchased }"
     >
-      {{ items.itemName }}
+      {{ items.name }}
       <input v-model="items.purchased" type="checkbox" />
     </li>
   </ul>

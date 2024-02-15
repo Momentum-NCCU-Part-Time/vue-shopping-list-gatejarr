@@ -5,7 +5,7 @@ const newList = ref('')
 const emit = defineEmits(['newListCreated'])
 
 const createNewList = () => {
-  fetch('http://localhost:3000/lists/', {
+  fetch('http://localhost:3000/shoppinglists/', {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
