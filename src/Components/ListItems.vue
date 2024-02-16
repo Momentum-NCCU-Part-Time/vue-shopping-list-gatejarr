@@ -32,7 +32,7 @@ const itemPurchased = () => {
   <ul>
     <li
       v-for="items in props.list.items"
-      :key="list.items.id"
+      :key="list.items._id"
       @click="purchased(items)"
       :class="{ strikeThrough: items.purchased }"
     >

@@ -6,20 +6,20 @@ const props = defineProps({ list: Object })
 const emit = defineEmits(['itemAdded'])
 
 const addItem = (list) => {
-  fetch('http://localhost:3000/shoppinglists/' + props.list._id, {
-    method: 'PATCH',
+  fetch('http://localhost:3000/shoppinglists/' + props.list._id + '/items', {
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       title: props.list.title,
       items: [
         ...props.list.items,
         {
-          id: props.list.items.length + 1,
-          itemName: newItem.value,
+          //  id: props.list.items.length + 1,
+          name: newItem.value,
           purchased: false
         }
-      ],
-      updatedAt: new Date()
+      ]
+      //updatedAt: new Date()
     })
   })
     .then((res) => res.json())
