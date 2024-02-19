@@ -2,24 +2,25 @@
 import { ref } from 'vue'
 
 const newItem = ref('')
+const newItemQuant = ref('')
 const props = defineProps({ list: Object })
 const emit = defineEmits(['itemAdded'])
 
-const addItem = (list) => {
+const addItem = () => {
   fetch('http://localhost:3000/shoppinglists/' + props.list._id + '/items', {
-    method: 'POST',
+    method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       title: props.list.title,
       items: [
         ...props.list.items,
         {
-          //  id: props.list.items.length + 1,
           name: newItem.value,
+          quantity: newItemQuant.value,
           purchased: false
         }
-      ]
-      //updatedAt: new Date()
+      ],
+      updatedAt: new Date()
     })
   })
     .then((res) => res.json())
@@ -37,6 +38,7 @@ const resetItem = () => {
 <template>
   <form id="newItemForm" @submit.prevent="addItem">
     <input v-model="newItem" type="text" placeholder="Add Item" required />
+    <input v-model="newItemQuant" type="number" placeholder="Quantity?" />
     <button type="submit">Add</button>
   </form>
 </template>

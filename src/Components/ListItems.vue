@@ -16,7 +16,7 @@ const purchased = (items) => {
 }
 
 const itemPurchased = () => {
-  fetch('http://localhost:3000/shoppinglists/' + props.list.id, {
+  fetch('http://localhost:3000/shoppinglists/' + props.list._id, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -37,6 +37,7 @@ const itemPurchased = () => {
       :class="{ strikeThrough: items.purchased }"
     >
       {{ items.name }}
+      {{ items.quantity }}
       <input v-model="items.purchased" type="checkbox" />
     </li>
   </ul>
