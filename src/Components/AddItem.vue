@@ -8,7 +8,7 @@ const emit = defineEmits(['itemAdded'])
 
 const addItem = () => {
   fetch('http://localhost:3000/shoppinglists/' + props.list._id + '/items', {
-    method: 'PATCH',
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       title: props.list.title,
@@ -32,6 +32,7 @@ const addItem = () => {
 
 const resetItem = () => {
   newItem.value = ''
+  newItemQuant.value = ''
 }
 </script>
 

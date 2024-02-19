@@ -29,7 +29,7 @@ const getLists = () => {
     <NewList @new-list-created="getLists" />
   </div>
   <br />
-  <div v-for="list in lists" :key="list.id" class="listContainer">
+  <div v-for="list in lists" :key="list._id" class="listContainer">
     <div>
       <h2>{{ list.title }}</h2>
       <h3>Number of Items: {{ list.items.length }}</h3>
