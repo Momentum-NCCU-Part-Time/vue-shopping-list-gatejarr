@@ -8,7 +8,7 @@ const emit = defineEmits(['itemAdded'])
 
 const addItem = () => {
   fetch('http://localhost:3000/shoppinglists/' + props.list._id + '/items', {
-    method: 'POST',
+    method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       title: props.list.title,
